@@ -4,8 +4,17 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
+
 class CreatePersonalAccessTokensTable extends Migration
-{
+{   /**
+    * 全アプリケーションサービスの初期起動処理
+    *
+    * @return void
+    */
+    public function boot()
+    {
+        Schema::defaultStringLength(191);
+    }
     /**
      * Run the migrations.
      *
